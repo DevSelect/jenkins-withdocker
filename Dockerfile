@@ -30,3 +30,6 @@ RUN npm install -g typescript
 #add jenkins and root to docker group
 RUN gpasswd -a jenkins docker 
 RUN gpasswd -a root docker 
+
+#TO RUN THIS IMAGE
+# docker run -d --name jenkins -p 8080:8080 -v /var/run/docker.sock:/var/run/docker.sock danieldram/jenkins
