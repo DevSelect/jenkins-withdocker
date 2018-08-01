@@ -1,5 +1,5 @@
 FROM jenkins/jenkins:lts
-MAINTAINER miiro@getintodevops.com
+MAINTAINER danieldram@gmail.com
 USER root
 
 # Install the latest Docker CE binaries
@@ -17,3 +17,14 @@ RUN apt-get update && \
    apt-get update && \
    apt-get -y install docker-ce
 
+
+#install build essentials
+
+RUN apt-get update && \
+  apt-get install -y build-essential
+
+#install nodejs & typescript
+RUN curl -sL https://deb.nodesource.com/setup_9.x | su -
+RUN apt-get install -y nodejs
+
+RUN npm install -g typescript
